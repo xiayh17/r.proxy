@@ -1,12 +1,17 @@
 Package: r.proxy
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Set Proxy in R Console
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: person(given = "Yonghe",
+           family = "Xia",
+           role = c("aut","ctb", "cre"),
+           email = "xiayh17@gmail.com")
+Maintainer: Yonghe Xia <xiayh17@gmail.com>
+Description: The use of proxies is required in certain network environments. 
+    Despite the power of system level software, it is still inconvenient to 
+    switch proxy networks at random in R's console. This package is designed 
+    to provide one-click switching between proxy and non-proxy states.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
