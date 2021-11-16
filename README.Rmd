@@ -37,7 +37,9 @@ This is a basic example which shows you how to use it:
 
 Start proxy by `proxy()`
 
-```{r start, eval=FALSE}
+Configrations interactive will show only in the first time you use. 
+
+```{r start_first, eval=FALSE}
 r.proxy::proxy()
 ```
 
@@ -49,6 +51,34 @@ r.proxy::proxy()
 #> [https proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> [http proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> Your setting have been save in ~/.Rproxy
+#> Proxy info: 
+#> http://127.0.0.1:7890http://192.168.3.15:7890socks5://127.0.0.1:7890
+#> check what your ip is: 
+#> IPv4: 
+#> 91.243.81.71
+#> 
+#> Details: 
+#> {
+#>     "organization": "MoreneHost",
+#>     "longitude": 6.1661,
+#>     "timezone": "Europe/Luxembourg",
+#>     "isp": "MoreneHost",
+#>     "offset": 3600,
+#>     "asn": 199524,
+#>     "asn_organization": "G-Core Labs S.A.",
+#>     "country": "Luxembourg",
+#>     "ip": "91.243.81.71",
+#>     "latitude": 49.7498,
+#>     "continent_code": "EU",
+#>     "country_code": "LU"
+#> }
+```
+
+```{r start_after, eval=FALSE}
+r.proxy::proxy()
+```
+
+``` r
 #> Proxy info: 
 #> http://127.0.0.1:7890http://192.168.3.15:7890socks5://127.0.0.1:7890
 #> check what your ip is: 
@@ -92,4 +122,21 @@ r.proxy::init_proxy()
 #> [https proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> [http proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> Your setting have been save in ~/.Rproxy
+```
+
+Check your IP
+
+```{r check}
+r.proxy::check_ip()
+```
+
+Test your connect
+
+[speedtest](https://github.com/hrbrmstr/speedtest) will be used in this step
+
+```{r test}
+speedtest::spd_test()
+r.proxy::proxy()
+speedtest::spd_test()
+r.proxy::noproxy()
 ```

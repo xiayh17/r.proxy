@@ -26,6 +26,8 @@ This is a basic example which shows you how to use it:
 
 Start proxy by `proxy()`
 
+Configrations interactive will show only in the first time you use.
+
 ``` r
 r.proxy::proxy()
 ```
@@ -38,6 +40,34 @@ r.proxy::proxy()
 #> [https proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> [http proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> Your setting have been save in ~/.Rproxy
+#> Proxy info: 
+#> http://127.0.0.1:7890http://192.168.3.15:7890socks5://127.0.0.1:7890
+#> check what your ip is: 
+#> IPv4: 
+#> 91.243.81.71
+#> 
+#> Details: 
+#> {
+#>     "organization": "MoreneHost",
+#>     "longitude": 6.1661,
+#>     "timezone": "Europe/Luxembourg",
+#>     "isp": "MoreneHost",
+#>     "offset": 3600,
+#>     "asn": 199524,
+#>     "asn_organization": "G-Core Labs S.A.",
+#>     "country": "Luxembourg",
+#>     "ip": "91.243.81.71",
+#>     "latitude": 49.7498,
+#>     "continent_code": "EU",
+#>     "country_code": "LU"
+#> }
+```
+
+``` r
+r.proxy::proxy()
+```
+
+``` r
 #> Proxy info: 
 #> http://127.0.0.1:7890http://192.168.3.15:7890socks5://127.0.0.1:7890
 #> check what your ip is: 
@@ -104,4 +134,108 @@ r.proxy::init_proxy()
 #> [https proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> [http proxy] {Default as 127.0.0.1:7890} (address:port): 
 #> Your setting have been save in ~/.Rproxy
+```
+
+Check your IP
+
+``` r
+r.proxy::check_ip()
+#> check what your ip is:
+#> IPv4:
+#> 58.253.50.194
+#> Details:
+#> {
+#>     "organization": "China Unicom Guangdong",
+#>     "longitude": 110.5702,
+#>     "city": "Zhongshan",
+#>     "timezone": "Asia/Shanghai",
+#>     "isp": "China Unicom Guangdong",
+#>     "offset": 28800,
+#>     "region": "Guangdong",
+#>     "asn": 17816,
+#>     "asn_organization": "China Unicom IP network China169 Guangdong province",
+#>     "country": "China",
+#>     "ip": "58.253.50.194",
+#>     "latitude": 21.3232,
+#>     "continent_code": "AS",
+#>     "country_code": "CN",
+#>     "region_code": "GD"
+#> }
+```
+
+Test your connect
+
+[speedtest](https://github.com/hrbrmstr/speedtest) will be used in this
+step
+
+``` r
+speedtest::spd_test()
+#> Warning: replacing previous import 'cli::num_ansi_colors' by
+#> 'crayon::num_ansi_colors' when loading 'speedtest'
+#> Gathering test configuration information...
+#> Gathering server list...
+#> Determining best server...
+#> Initiating test from China Unicom Guangdong (58.253.50.194) to CTM3 (Coloane)
+#> 
+#> Analyzing download speed..........
+#> Download: 185 Mbit/s
+#> 
+#> Analyzing upload speed......
+#> Upload: 42 Mbit/s
+r.proxy::proxy()
+#> Proxy info:
+#> http://127.0.0.1:7890http://127.0.0.1:7890socks5://127.0.0.1:7890
+#> check what your ip is:
+#> IPv4:
+#> 91.243.81.71
+#> Details:
+#> {
+#>     "organization": "MoreneHost",
+#>     "longitude": 6.1661,
+#>     "timezone": "Europe/Luxembourg",
+#>     "isp": "MoreneHost",
+#>     "offset": 3600,
+#>     "asn": 199524,
+#>     "asn_organization": "G-Core Labs S.A.",
+#>     "country": "Luxembourg",
+#>     "ip": "91.243.81.71",
+#>     "latitude": 49.7498,
+#>     "continent_code": "EU",
+#>     "country_code": "LU"
+#> }
+speedtest::spd_test()
+#> Gathering test configuration information...
+#> Gathering server list...
+#> Determining best server...
+#> Initiating test from MoreneHost (91.243.81.71) to Maxis (Subang Jaya)
+#> 
+#> Analyzing download speed..........
+#> Download: 154 Mbit/s
+#> 
+#> Analyzing upload speed......
+#> Upload: 76 Mbit/s
+r.proxy::noproxy()
+#> Proxy was cleaned!
+#> 
+#> check what your ip is:
+#> IPv4:
+#> 58.253.50.194
+#> Details:
+#> {
+#>     "organization": "China Unicom Guangdong",
+#>     "longitude": 110.5702,
+#>     "city": "Zhongshan",
+#>     "timezone": "Asia/Shanghai",
+#>     "isp": "China Unicom Guangdong",
+#>     "offset": 28800,
+#>     "region": "Guangdong",
+#>     "asn": 17816,
+#>     "asn_organization": "China Unicom IP network China169 Guangdong province",
+#>     "country": "China",
+#>     "ip": "58.253.50.194",
+#>     "latitude": 21.3232,
+#>     "continent_code": "AS",
+#>     "country_code": "CN",
+#>     "region_code": "GD"
+#> }
 ```
