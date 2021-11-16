@@ -136,6 +136,8 @@ r.proxy::init_proxy()
 #> Your setting have been save in ~/.Rproxy
 ```
 
+## More
+
 Check your IP
 
 ``` r
@@ -169,19 +171,20 @@ Test your connect
 step
 
 ``` r
+# install.packages("speedtest", repos = c("https://cinc.rud.is", "https://cloud.r-project.org/"))
 speedtest::spd_test()
 #> Warning: replacing previous import 'cli::num_ansi_colors' by
 #> 'crayon::num_ansi_colors' when loading 'speedtest'
 #> Gathering test configuration information...
 #> Gathering server list...
 #> Determining best server...
-#> Initiating test from China Unicom Guangdong (58.253.50.194) to CTM3 (Coloane)
+#> Initiating test from China Unicom Guangdong (58.253.50.194) to CTM2 (Taipa)
 #> 
 #> Analyzing download speed..........
-#> Download: 185 Mbit/s
+#> Download: 83 Mbit/s
 #> 
 #> Analyzing upload speed......
-#> Upload: 42 Mbit/s
+#> Upload: 40 Mbit/s
 r.proxy::proxy()
 #> Proxy info:
 #> http://127.0.0.1:7890http://127.0.0.1:7890socks5://127.0.0.1:7890
@@ -210,10 +213,10 @@ speedtest::spd_test()
 #> Initiating test from MoreneHost (91.243.81.71) to Maxis (Subang Jaya)
 #> 
 #> Analyzing download speed..........
-#> Download: 154 Mbit/s
+#> Download: 157 Mbit/s
 #> 
 #> Analyzing upload speed......
-#> Upload: 76 Mbit/s
+#> Upload: 107 Mbit/s
 r.proxy::noproxy()
 #> Proxy was cleaned!
 #> 

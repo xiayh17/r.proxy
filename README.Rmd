@@ -124,6 +124,8 @@ r.proxy::init_proxy()
 #> Your setting have been save in ~/.Rproxy
 ```
 
+## More
+
 Check your IP
 
 ```{r check}
@@ -135,6 +137,7 @@ Test your connect
 [speedtest](https://github.com/hrbrmstr/speedtest) will be used in this step
 
 ```{r test}
+# install.packages("speedtest", repos = c("https://cinc.rud.is", "https://cloud.r-project.org/"))
 speedtest::spd_test()
 r.proxy::proxy()
 speedtest::spd_test()
