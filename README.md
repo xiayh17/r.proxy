@@ -4,6 +4,11 @@
 # r.proxy
 
 <!-- badges: start -->
+![](https://www.r-pkg.org/badges/version-last-release/r.proxy)
+![](https://cranlogs.r-pkg.org/badges/grand-total/r.proxy)
+![](https://cranlogs.r-pkg.org/badges/last-day/r.proxy)
+![](https://cranlogs.r-pkg.org/badges/last-week/r.proxy)
+![](https://cranlogs.r-pkg.org/badges/r.proxy)
 <!-- badges: end -->
 
 The goal of r.proxy is to Set Proxy in R Console.
