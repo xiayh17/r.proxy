@@ -13,7 +13,14 @@ This project is inspired by
 
 ## Installation
 
-You can install the development version of r.proxy like so:
+You can install the released version of r.proxy from
+[CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("r.proxy")
+```
+
+And you can install the development version of r.proxy like so:
 
 ``` r
 # install.packages("devtools")
