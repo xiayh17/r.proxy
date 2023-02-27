@@ -19,11 +19,19 @@ check_ip <- function() {
   message("check what your ip is: ")
 
   message("IPv4: ")
-  ipv4 <- curl_fetch_memory("https://api-ipv4.ip.sb/ip")
-  message(rawToChar(ipv4$content))
-  # message("IPv6: ")
+  tryCatch({
+    ipv4 <- curl_fetch_memory("https://api-ipv4.ip.sb/ip")
+    message(rawToChar(ipv4$content))
+  }, error = function(e) {
+    message("Unable to retrieve IPv4 address.")
+  })
+
   message("Details: ")
-  det <- curl_fetch_memory("https://api.ip.sb/geoip")
-  message(jsonlite::prettify(rawToChar(det$content)))
+  tryCatch({
+    det <- curl_fetch_memory("https://api.ip.sb/geoip")
+    message(jsonlite::prettify(rawToChar(det$content)))
+  }, error = function(e) {
+    message("Unable to retrieve IP details.")
+  })
 
 }
