@@ -13,5 +13,7 @@ a file in home directory
 When user use it in the first time or reset proxy, this will run and store setting in home directory.
 }
 \examples{
+\dontrun{
 init_proxy()
+}
 }
