@@ -13,5 +13,7 @@ unset proxy http https and socks5
 unset proxy http https and socks5
 }
 \examples{
+\dontrun{
 noproxy()
+}
 }

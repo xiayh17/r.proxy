@@ -32,7 +32,9 @@ proxy <- function() {
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' noproxy()
+#' }
 noproxy <- function() {
   Sys.unsetenv(c("https_proxy","http_proxy","all_proxy"))
   message("Proxy was cleaned!")

@@ -13,7 +13,7 @@ IP information
 check what your IP is
 }
 \details{
-Use \code{\link[curl_fetch_memory]{curl}} to get information about the web page
+Use \code{\link[curl]{curl_fetch_memory}} to get information about the web page
 https://api-ipv4.ip.sb/ip & https://api.ip.sb/geoip
 }
 \examples{
