@@ -14,7 +14,9 @@
 #' https://api-ipv4.ip.sb/ip & https://api.ip.sb/geoip
 #'
 #' @examples
+#' \dontrun{
 #' check_ip()
+#' }
 check_ip <- function() {
 
   message("check what your ip is: ")

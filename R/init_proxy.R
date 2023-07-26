@@ -20,7 +20,7 @@ init_proxy <- function() {
 
   http <- readline("[http proxy] {Default as 127.0.0.1:7890} (address:port): ")
 
-  all <- c(socks5,https,http)
+  all <- c(http,https,socks5)
 
   res <- lapply(all, function(x)
     if (nchar(x) == 0) {

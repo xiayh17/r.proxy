@@ -17,5 +17,7 @@ Use \code{\link[curl]{curl_fetch_memory}} to get information about the web page
 https://api-ipv4.ip.sb/ip & https://api.ip.sb/geoip
 }
 \examples{
+\dontrun{
 check_ip()
+}
 }
