@@ -20,7 +20,9 @@ proxy <- function() {
              https_proxy=config_info[['https']],
              all_proxy=config_info[['socks5']])
   message("Proxy info: ")
-  message(Sys.getenv(c("https_proxy","http_proxy","all_proxy")))
+  message("http:   ", Sys.getenv("http_proxy"))
+  message("https:  ", Sys.getenv("https_proxy"))
+  message("socks5: ", Sys.getenv("all_proxy"))
   check_ip()
 }
 
